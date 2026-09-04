@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<!-- saved from url=(0177)file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solène — Independent Perfume Atelier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./WEBSITE2_files/css2" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B1F2A;
+    --ink-soft:#252B3A;
+    --amber:#C17F3E;
+    --mauve:#A8677D;
+    --parchment:#EDE6D6;
+    --parchment-dim:#C9C2B0;
+    --sage:#7A8B76;
+    --line: rgba(237,230,214,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth; overflow-x:hidden;}
+  body{
+    background:var(--ink);
+    color:var(--parchment);
+    font-family:'Work Sans', sans-serif;
+    font-weight:300;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    letter-spacing:0.01em;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 40px;}
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible, input:focus-visible{
+    outline:1.5px solid var(--amber);
+    outline-offset:4px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    background:linear-gradient(to bottom, rgba(27,31,42,0.92), rgba(27,31,42,0));
+    padding:28px 0 40px;
+  }
+  nav{display:flex; justify-content:space-between; align-items:center;}
+  .brand{font-family:'Cormorant Garamond', serif; font-size:1.5rem; font-weight:600; letter-spacing:0.04em;}
+  .navlinks{display:flex; gap:36px; font-size:0.9rem; color:var(--parchment-dim);}
+  .navlinks a{transition:color .25s ease;}
+  .navlinks a:hover{color:var(--amber);}
+  .navlinks{display:none;}
+  @media (min-width:820px){.navlinks{display:flex; align-items:center;}}
+  .nav-cta{
+    background:var(--amber);
+    color:var(--ink) !important;
+    padding:9px 20px;
+    border:1px solid var(--amber);
+    font-size:0.85rem;
+    transition:background .25s ease, color .25s ease;
+  }
+  .nav-cta:hover{background:transparent; color:var(--amber) !important;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    padding-top:120px;
+    padding-bottom:80px;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:56px;
+    align-items:end;
+  }
+  @media (min-width:900px){
+    .hero-grid{grid-template-columns:1.3fr 1fr;}
+  }
+  .hero-eyebrow{
+    font-size:0.85rem;
+    color:var(--sage);
+    margin-bottom:22px;
+    max-width:30ch;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 6vw, 4.6rem);
+    line-height:1.05;
+    color:var(--parchment);
+    max-width:14ch;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--amber);
+  }
+  .hero p.lede{
+    margin-top:26px;
+    max-width:42ch;
+    font-size:1.05rem;
+    color:var(--parchment-dim);
+  }
+  .hero-cta{
+    margin-top:36px;
+    display:flex;
+    gap:18px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding:15px 30px;
+    background:var(--amber);
+    color:var(--ink);
+    font-size:0.88rem;
+    letter-spacing:0.03em;
+    border:1px solid var(--amber);
+    cursor:pointer;
+    transition:background .25s ease, color .25s ease, transform .25s ease;
+    font-family:'Work Sans',sans-serif;
+  }
+  .btn:hover{background:transparent; color:var(--parchment);}
+  .btn-ghost{
+    padding:15px 26px;
+    border:1px solid var(--line);
+    font-size:0.88rem;
+    color:var(--parchment-dim);
+    transition:border-color .25s ease, color .25s ease;
+  }
+  .btn-ghost:hover{border-color:var(--parchment-dim); color:var(--parchment);}
+
+  /* scent trail signature animation */
+  .trail{
+    position:relative;
+    height:260px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .trail svg{width:100%; height:100%; max-width:340px;}
+  .trail-path{
+    fill:none;
+    stroke:var(--mauve);
+    stroke-width:1;
+    stroke-dasharray:600;
+    stroke-dashoffset:600;
+    animation:draw 2.6s ease forwards 0.4s;
+  }
+  .trail-dot{
+    fill:var(--amber);
+    opacity:0;
+    animation:appear 0.6s ease forwards 2.7s;
+  }
+  @keyframes draw{ to{stroke-dashoffset:0;} }
+  @keyframes appear{ to{opacity:1;} }
+
+  /* ---------- SECTION SHARED ---------- */
+  section{padding:120px 0;}
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:64px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:28px;
+    flex-wrap:wrap;
+  }
+  .section-head h2{
+    font-size:clamp(1.9rem, 3.4vw, 2.6rem);
+    color:var(--parchment);
+  }
+  .section-head p{
+    max-width:36ch;
+    color:var(--parchment-dim);
+    font-size:0.95rem;
+  }
+
+  /* ---------- NOTES (genuine sequence: top / heart / base) ---------- */
+  .notes{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0;
+  }
+  @media (min-width:760px){
+    .notes{grid-template-columns:repeat(3,1fr);}
+  }
+  .note{
+    padding:40px 36px;
+    border-right:1px solid var(--line);
+    border-top:1px solid var(--line);
+    position:relative;
+    transition:background .3s ease;
+  }
+  .note:last-child{border-right:none;}
+  .note .num{
+    font-family:'Cormorant Garamond', serif;
+    font-size:0.95rem;
+    color:var(--amber);
+    margin-bottom:18px;
+    display:block;
+  }
+  .note h3{
+    font-size:1.6rem;
+    margin-bottom:12px;
+    color:var(--parchment);
+  }
+  .note p{
+    font-size:0.92rem;
+    color:var(--parchment-dim);
+  }
+  .note:hover{background:var(--ink-soft);}
+
+  /* ---------- COLLECTION RAIL ---------- */
+  .rail{
+    display:flex;
+    gap:28px;
+    overflow-x:auto;
+    padding-bottom:20px;
+    scrollbar-width:thin;
+    scrollbar-color:var(--line) transparent;
+  }
+  .rail::-webkit-scrollbar{height:5px;}
+  .rail::-webkit-scrollbar-thumb{background:var(--line);}
+  .card{
+    flex:0 0 280px;
+    background:var(--ink-soft);
+    border:1px solid var(--line);
+  }
+  .card-swatch{
+    height:220px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .card-swatch span{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:2.4rem;
+    color:rgba(27,31,42,0.5);
+  }
+  .card-body{padding:26px;}
+  .card-body .kicker{
+    font-size:0.78rem;
+    color:var(--sage);
+    margin-bottom:8px;
+  }
+  .card-body h3{font-size:1.4rem; margin-bottom:8px; color:var(--parchment);}
+  .card-body p{font-size:0.88rem; color:var(--parchment-dim); margin-bottom:16px;}
+  .card-body .price{font-size:0.9rem; color:var(--amber); margin-bottom:16px;}
+  .card-order{
+    display:inline-block;
+    font-size:0.82rem;
+    color:var(--parchment);
+    border:1px solid var(--line);
+    padding:9px 18px;
+    transition:border-color .25s ease, color .25s ease, background .25s ease;
+  }
+  .card-order:hover{background:var(--amber); border-color:var(--amber); color:var(--ink);}
+
+  /* ---------- WHY / PSYCHOLOGY STRIP ---------- */
+  .strip{
+    background:var(--ink-soft);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .strip-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:48px;
+  }
+  @media (min-width:820px){
+    .strip-grid{grid-template-columns:1fr 1fr;}
+  }
+  .strip h2{font-size:clamp(1.8rem,3vw,2.4rem); max-width:16ch; margin-bottom:20px;}
+  .strip p{color:var(--parchment-dim); max-width:44ch; font-size:0.98rem;}
+  .swatch-row{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
+  .swatch{
+    width:56px; height:56px;
+    display:flex; align-items:flex-end;
+    font-size:0.6rem;
+    color:rgba(27,31,42,0.55);
+    padding:6px;
+  }
+
+  /* ---------- PAYMENT ---------- */
+  .payment{background:var(--ink-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .pay-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  @media (min-width:760px){
+    .pay-grid{grid-template-columns:repeat(4,1fr);}
+  }
+  .pay-card{
+    border:1px solid var(--line);
+    padding:32px 26px;
+    transition:border-color .25s ease, background .25s ease;
+  }
+  .pay-card:hover{border-color:var(--amber); background:var(--ink);}
+  .pay-card .pay-icon{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.8rem;
+    color:var(--amber);
+    margin-bottom:14px;
+    display:block;
+  }
+  .pay-card h3{font-size:1.25rem; color:var(--parchment); margin-bottom:8px;}
+  .pay-card p{font-size:0.86rem; color:var(--parchment-dim);}
+  .pay-note{
+    margin-top:40px;
+    font-size:0.88rem;
+    color:var(--parchment-dim);
+    max-width:52ch;
+  }
+  .pay-note strong{color:var(--sage); font-weight:500;}
+
+  /* ---------- TESTIMONIAL ---------- */
+  .testimonial blockquote{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:clamp(1.5rem, 3vw, 2.1rem);
+    max-width:26ch;
+    color:var(--parchment);
+    line-height:1.4;
+  }
+  .testimonial cite{
+    display:block;
+    margin-top:28px;
+    font-style:normal;
+    font-family:'Work Sans',sans-serif;
+    font-size:0.85rem;
+    color:var(--parchment-dim);
+  }
+
+  /* ---------- NEWSLETTER / FOOTER ---------- */
+  footer{
+    padding:100px 0 50px;
+    border-top:1px solid var(--line);
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:56px;
+  }
+  @media (min-width:820px){
+    .footer-grid{grid-template-columns:1.1fr 1fr;}
+  }
+  footer h2{font-size:clamp(1.8rem,3vw,2.3rem); max-width:14ch; margin-bottom:18px;}
+  footer p{color:var(--parchment-dim); max-width:38ch; font-size:0.95rem; margin-bottom:28px;}
+  .subscribe{
+    display:flex;
+    border-bottom:1px solid var(--parchment-dim);
+    max-width:420px;
+    padding-bottom:12px;
+  }
+  .subscribe input{
+    flex:1;
+    background:transparent;
+    border:none;
+    color:var(--parchment);
+    font-family:'Work Sans',sans-serif;
+    font-size:0.95rem;
+    padding:6px 0;
+  }
+  .subscribe input::placeholder{color:var(--parchment-dim);}
+  .subscribe button{
+    background:none; border:none; color:var(--amber);
+    font-family:'Work Sans',sans-serif; font-size:0.85rem; cursor:pointer;
+    letter-spacing:0.03em;
+  }
+  .form-note{font-size:0.8rem; margin-top:14px; color:var(--sage); min-height:1.2em;}
+  .foot-links{display:flex; flex-direction:column; gap:14px; font-size:0.9rem; color:var(--parchment-dim);}
+  .foot-links a:hover{color:var(--amber);}
+  .foot-bottom{
+    margin-top:80px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    font-size:0.78rem;
+    color:rgba(237,230,214,0.4);
+    border-top:1px solid var(--line);
+    padding-top:26px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="brand">Solène</div>
+      <div class="navlinks">
+        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#notes">Composition</a>
+        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#collection">Collection</a>
+        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#atelier">Learn More</a>
+        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#payment">Payment</a>
+        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#join">Visit</a>
+        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#collection" class="nav-cta">Order Now</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="hero-eyebrow">Hand-poured in small batches, Marseille</p>
+      <h1>A scent people <em>remember</em>, not just notice</h1>
+      <p class="lede">Every bottle tells a story in three acts — a bright first impression, a heart that lingers, a trace that stays with you for hours. Ready to find the one that's yours? Only forty bottles made per batch, so it never runs common.</p>
+      <div class="hero-cta">
+        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#collection" class="btn">Order Now</a>
+        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#atelier" class="btn-ghost">Learn More</a>
+      </div>
+    </div>
+    <div class="trail" aria-hidden="true">
+      <svg viewBox="0 0 320 260">
+        <path class="trail-path" d="M20,220 C80,180 60,100 130,90 C200,80 190,30 280,25"></path>
+        <circle class="trail-dot" cx="280" cy="25" r="5"></circle>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="notes">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Watch your scent come alive, minute by minute</h2>
+      <p>No confusing jargon here — just a simple timeline of how your fragrance changes throughout the day, from the moment you spray to the trace people remember hours later.</p>
+    </div>
+    <div class="notes">
+      <div class="note">
+        <span class="num">0–15 min · First impression</span>
+        <h3>Top note</h3>
+        <p>Bergamot, pink pepper, and citrus peel spark to life the instant you spray — the burst that makes people turn their head.</p>
+      </div>
+      <div class="note">
+        <span class="num">1–4 hrs · The real you</span>
+        <h3>Heart note</h3>
+        <p>Iris, dried fig, and cedar settle in and take over — this is the character people will actually associate with you.</p>
+      </div>
+      <div class="note">
+        <span class="num">4+ hrs · What lingers</span>
+        <h3>Base note</h3>
+        <p>Amber, oakmoss, and vetiver stay long after you've left the room — the reason people ask "what are you wearing?"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="collection">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Pick the mood, we'll pour the bottle</h2>
+      <p>Six compositions, each built around a single dominant mood rather than a season. Tap "Order" on the one that feels like you.</p>
+    </div>
+    <div class="rail">
+      <div class="card">
+        <div class="card-swatch" style="background:var(--amber);"><span>I</span></div>
+        <div class="card-body">
+          <p class="kicker">Amber · Warmth</p>
+          <h3>Ambre Nue</h3>
+          <p>Vanilla resin, tonka bean, sun-warmed skin — for the days you want to feel like a hug.</p>
+          <p class="price">€128 · 50ml</p>
+          <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#payment" class="card-order">Order This →</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-swatch" style="background:var(--mauve);"><span>II</span></div>
+        <div class="card-body">
+          <p class="kicker">Mauve · Intimacy</p>
+          <h3>Rose Nocturne</h3>
+          <p>Dark rose, black pepper, worn leather — for the nights you want to be unforgettable.</p>
+          <p class="price">€132 · 50ml</p>
+          <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#payment" class="card-order">Order This →</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-swatch" style="background:var(--sage);"><span>III</span></div>
+        <div class="card-body">
+          <p class="kicker">Sage · Calm</p>
+          <h3>Sous Bois</h3>
+          <p>Wet moss, fig leaf, quiet cedar — for the moments you just need to breathe.</p>
+          <p class="price">€124 · 50ml</p>
+          <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#payment" class="card-order">Order This →</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-swatch" style="background:var(--parchment-dim);"><span>IV</span></div>
+        <div class="card-body">
+          <p class="kicker">Parchment · Clarity</p>
+          <h3>Lin Blanc</h3>
+          <p>Fresh linen, white musk, iris root — for a clean start, every single morning.</p>
+          <p class="price">€118 · 50ml</p>
+          <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#payment" class="card-order">Order This →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strip" id="atelier">
+  <div class="wrap strip-grid">
+    <div>
+      <h2>Want to know why every detail is deliberate?</h2>
+      <p>Every accent in our bottles and labels is chosen the same way we choose ingredients — for what it does to the person holding it, not what looks good in a photo. Here's the story behind it.</p>
+    </div>
+    <div>
+      <p>Amber signals warmth before the wearer says a word. Mauve carries the same emotional register as rose absolute — intimacy, not sweetness. Sage settles a room the way vetiver settles a composition. Ink holds the others quiet, the way a good base note holds a fragrance together.</p>
+      <div class="swatch-row" aria-hidden="true">
+        <div class="swatch" style="background:var(--amber);">amber</div>
+        <div class="swatch" style="background:var(--mauve);">mauve</div>
+        <div class="swatch" style="background:var(--sage);">sage</div>
+        <div class="swatch" style="background:var(--parchment-dim); color:var(--ink);">parchment</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="payment" id="payment">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Checkout, made simple</h2>
+      <p>Pick whichever way suits you — every order is packed and shipped within 48 hours, tracking included.</p>
+    </div>
+    <div class="pay-grid">
+      <div class="pay-card">
+        <span class="pay-icon">I</span>
+        <h3>Credit / Debit Card</h3>
+        <p>Visa, Mastercard, and Amex accepted — secured checkout, instant confirmation.</p>
+      </div>
+      <div class="pay-card">
+        <span class="pay-icon">II</span>
+        <h3>Bank Transfer</h3>
+        <p>Prefer a direct transfer? We'll email the details right after you order.</p>
+      </div>
+      <div class="pay-card">
+        <span class="pay-icon">III</span>
+        <h3>Digital Wallet</h3>
+        <p>PayPal, Apple Pay, and Google Pay — pay in two taps, no card details to type.</p>
+      </div>
+      <div class="pay-card">
+        <span class="pay-icon">IV</span>
+        <h3>Pay on Delivery</h3>
+        <p>Available in select cities — try the bottle before you settle the bill.</p>
+      </div>
+    </div>
+    <p class="pay-note"><strong>Good to know:</strong> every scent ships in protective packaging with a discovery vial included, free, on your first order.</p>
+  </div>
+</section>
+
+<section class="testimonial">
+  <div class="wrap">
+    <blockquote>
+      "I stopped wearing perfume for years because everything smelled like everyone else. This is the first bottle that smells like a decision."
+      <cite>— Inès M., wearing Rose Nocturne since 2023</cite>
+    </blockquote>
+  </div>
+</section>
+
+<footer id="join">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h2>Not ready to decide? Start with a sample.</h2>
+        <p>We open the Marseille studio for fittings by appointment. Can't visit in person? A discovery set of five 5ml vials ships worldwide, so you can try before you commit.</p>
+        <form class="subscribe" id="subscribeForm">
+          <input type="email" placeholder="Your email" required="" aria-label="Email address">
+          <button type="submit">Join the list →</button>
+        </form>
+        <p class="form-note" id="formNote"></p>
+      </div>
+      <div class="foot-links">
+        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#collection">Order Now</a>
+        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#payment">Payment Options</a>
+        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#atelier">Learn More</a>
+        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#notes">Composition philosophy</a>
+        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#atelier">Book a fitting</a>
+        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#">Shipping &amp; returns</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Solène Atelier, Marseille</span>
+      <span>Made in small batches</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('subscribeForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('formNote').textContent = "You're on the list — we'll write before the next batch.";
+    this.reset();
+  });
+</script>
+
+
+
+</body></html>
