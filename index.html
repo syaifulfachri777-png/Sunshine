@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0177)file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Solène — Independent Perfume Atelier</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link href="./WEBSITE2_files/css2" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#1B1F2A;
@@ -18,7 +18,7 @@
     --line: rgba(237,230,214,0.14);
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth; overflow-x:hidden;}
+  html{scroll-behavior:smooth;}
   body{
     background:var(--ink);
     color:var(--parchment);
@@ -141,27 +141,47 @@
   /* scent trail signature animation */
   .trail{
     position:relative;
-    height:260px;
+    height:340px;
     display:flex;
     align-items:center;
     justify-content:center;
   }
-  .trail svg{width:100%; height:100%; max-width:340px;}
+  .trail svg{width:100%; height:100%; max-width:220px;}
   .trail-path{
     fill:none;
     stroke:var(--mauve);
-    stroke-width:1;
-    stroke-dasharray:600;
-    stroke-dashoffset:600;
+    stroke-width:1.4;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-dasharray:720;
+    stroke-dashoffset:720;
     animation:draw 2.6s ease forwards 0.4s;
+  }
+  .trail-detail{
+    fill:none;
+    stroke:var(--parchment-dim);
+    stroke-width:0.8;
+    opacity:0;
+    animation:appear 0.6s ease forwards 2.6s;
   }
   .trail-dot{
     fill:var(--amber);
     opacity:0;
     animation:appear 0.6s ease forwards 2.7s;
   }
+  .trail-sparkle{
+    stroke:var(--amber);
+    stroke-width:1.4;
+    stroke-linecap:round;
+    opacity:0;
+    animation:sparkle 1.6s ease-in-out infinite 3s;
+  }
   @keyframes draw{ to{stroke-dashoffset:0;} }
   @keyframes appear{ to{opacity:1;} }
+  @keyframes sparkle{
+    0%,100%{opacity:0; transform:scale(0.6);}
+    50%{opacity:1; transform:scale(1);}
+  }
 
   /* ---------- SECTION SHARED ---------- */
   section{padding:120px 0;}
@@ -403,12 +423,12 @@
     <nav>
       <div class="brand">Solène</div>
       <div class="navlinks">
-        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#notes">Composition</a>
-        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#collection">Collection</a>
-        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#atelier">Learn More</a>
-        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#payment">Payment</a>
-        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#join">Visit</a>
-        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#collection" class="nav-cta">Order Now</a>
+        <a href="#notes">Composition</a>
+        <a href="#collection">Collection</a>
+        <a href="#atelier">Learn More</a>
+        <a href="#payment">Payment</a>
+        <a href="#join">Visit</a>
+        <a href="#collection" class="nav-cta">Order Now</a>
       </div>
     </nav>
   </div>
@@ -421,14 +441,19 @@
       <h1>A scent people <em>remember</em>, not just notice</h1>
       <p class="lede">Every bottle tells a story in three acts — a bright first impression, a heart that lingers, a trace that stays with you for hours. Ready to find the one that's yours? Only forty bottles made per batch, so it never runs common.</p>
       <div class="hero-cta">
-        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#collection" class="btn">Order Now</a>
-        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#atelier" class="btn-ghost">Learn More</a>
+        <a href="#collection" class="btn">Order Now</a>
+        <a href="#atelier" class="btn-ghost">Learn More</a>
       </div>
     </div>
     <div class="trail" aria-hidden="true">
-      <svg viewBox="0 0 320 260">
-        <path class="trail-path" d="M20,220 C80,180 60,100 130,90 C200,80 190,30 280,25"></path>
-        <circle class="trail-dot" cx="280" cy="25" r="5"></circle>
+      <svg viewBox="0 0 200 320">
+        <path class="trail-path" d="M78,18 L122,18 L122,52 C122,58 130,62 133,70 L133,92 C158,104 172,132 172,168 L172,288 C172,304 160,316 144,316 L56,316 C40,316 28,304 28,288 L28,168 C28,132 42,104 67,92 L67,70 C70,62 78,58 78,52 Z"></path>
+        <path class="trail-detail" d="M67,92 L133,92"></path>
+        <path class="trail-detail" d="M28,150 L172,150"></path>
+        <path class="trail-detail" d="M78,18 L78,52 M122,18 L122,52"></path>
+        <circle class="trail-dot" cx="100" cy="35" r="3.5"></circle>
+        <path class="trail-sparkle" d="M148,60 L148,72 M142,66 L154,66"></path>
+        <path class="trail-sparkle" d="M158,100 L158,108 M154,104 L162,104" style="animation-delay:3.6s;"></path>
       </svg>
     </div>
   </div>
@@ -474,7 +499,7 @@
           <h3>Ambre Nue</h3>
           <p>Vanilla resin, tonka bean, sun-warmed skin — for the days you want to feel like a hug.</p>
           <p class="price">€128 · 50ml</p>
-          <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#payment" class="card-order">Order This →</a>
+          <a href="#payment" class="card-order">Order This →</a>
         </div>
       </div>
       <div class="card">
@@ -484,7 +509,7 @@
           <h3>Rose Nocturne</h3>
           <p>Dark rose, black pepper, worn leather — for the nights you want to be unforgettable.</p>
           <p class="price">€132 · 50ml</p>
-          <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#payment" class="card-order">Order This →</a>
+          <a href="#payment" class="card-order">Order This →</a>
         </div>
       </div>
       <div class="card">
@@ -494,7 +519,7 @@
           <h3>Sous Bois</h3>
           <p>Wet moss, fig leaf, quiet cedar — for the moments you just need to breathe.</p>
           <p class="price">€124 · 50ml</p>
-          <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#payment" class="card-order">Order This →</a>
+          <a href="#payment" class="card-order">Order This →</a>
         </div>
       </div>
       <div class="card">
@@ -504,7 +529,7 @@
           <h3>Lin Blanc</h3>
           <p>Fresh linen, white musk, iris root — for a clean start, every single morning.</p>
           <p class="price">€118 · 50ml</p>
-          <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#payment" class="card-order">Order This →</a>
+          <a href="#payment" class="card-order">Order This →</a>
         </div>
       </div>
     </div>
@@ -577,18 +602,18 @@
         <h2>Not ready to decide? Start with a sample.</h2>
         <p>We open the Marseille studio for fittings by appointment. Can't visit in person? A discovery set of five 5ml vials ships worldwide, so you can try before you commit.</p>
         <form class="subscribe" id="subscribeForm">
-          <input type="email" placeholder="Your email" required="" aria-label="Email address">
+          <input type="email" placeholder="Your email" required aria-label="Email address">
           <button type="submit">Join the list →</button>
         </form>
         <p class="form-note" id="formNote"></p>
       </div>
       <div class="foot-links">
-        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#collection">Order Now</a>
-        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#payment">Payment Options</a>
-        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#atelier">Learn More</a>
-        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#notes">Composition philosophy</a>
-        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#atelier">Book a fitting</a>
-        <a href="file:///C:/Users/acer/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/D3FF04F911701558B35AA020EC5483BC45CAD49C/transfers/2026-36/index-2-1.html#">Shipping &amp; returns</a>
+        <a href="#collection">Order Now</a>
+        <a href="#payment">Payment Options</a>
+        <a href="#atelier">Learn More</a>
+        <a href="#notes">Composition philosophy</a>
+        <a href="#atelier">Book a fitting</a>
+        <a href="#">Shipping & returns</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -606,6 +631,5 @@
   });
 </script>
 
-
-
-</body></html>
+</body>
+</html>
